@@ -24,51 +24,32 @@ function pedirDatos(){
 
 };
 
+let pago=0;
 function comprar (){
-    let articulo= parseInt(prompt ("¿Qué articulo desea comprar? 1-Cartuchera; 2-Cuaderno; 3-Set Mate; 4-Sahumerios"));
-    console.log("Articulo = ", articulo);
-    let presupuesto=parseFloat(prompt("Ingrese su presupuesto:"));
-    let pago='';
+    let articulo= parseInt(prompt ("¿Qué articulo desea comprar? 1-Cartuchera ($200); 2-Cuaderno ($350); 3-Set Mate ($700); 4-Sahumerios ($250"));
+    console.log("Articulo = ", articulo);   
     switch (articulo){
-        case 1: {
+        case 1: 
             pago = 200;
-            if (pago<=presupuesto){
-                alert("Operación permitida - Tiene dinero suficiente");
-                console.log("Operación permitida - Tiene dinero suficiente");
-            } else alert("Operación denegada - No tiene dinero suficiente");
             break;
-        }
-        case 2: {
+
+        case 2: 
             pago = 350;
-            if (pago<=presupuesto){
-                alert("Operación permitida - Tiene dinero suficiente");
-                console.log("Operación permitida - Tiene dinero suficiente");
-            } else alert("Operación denegada");
             break;
-        }
-        case 3: {
+
+        case 3:
             pago = 700;
-            if (pago<=presupuesto){
-                alert("Operación permitida - Tiene dinero suficiente");
-                console.log("Operación permitida - Tiene dinero suficiente");
-            } else alert("Operación denegada - No tiene dinero suficiente");
             break;
-        }
-        case 4: {
+
+        case 4: 
             pago= 250;
-            if (pago<=presupuesto){
-                alert("Operación permitida - Tiene dinero suficiente");
-                console.log("Operación permitida - Tiene dinero suficiente");
-            } else alert("Operación denegada - No tiene dinero suficiente");
-            break
-        }
+            break;
+
         default:
             alert("Ingrese una opción válida!");
             break;
-    }
-    return (
-        console.log("El articulo cuesta :",pago)
-    )
+    };
+
 };
 
 function pagar(pago){
@@ -76,33 +57,39 @@ function pagar(pago){
     console.log(modo);
     switch (modo){
         case 1: 
-            pago=pago*0.85;
-            alert("Monto a pagar: ",pago);
-            console.log("Monto a pagar: ",pago);
+           return pago=pago*0.85;
             break;
         
         case 2: 
-            pago=pago*1.1;
-            alert("Monto a pagar: ",pago);
-            console.log("Monto a pagar: ",pago);
+            return pago=pago*1.1;
             break;
         
         case 3: 
-            pago=pago*1;
-            alert("Monto a pagar: ",pago);
-            console.log("Monto a pagar: ",pago);
+            return pago ;
             break;
         default:
             console.log("Ingrese una opción correcta");
             break;
-    };
+    }; console.log(pago);
 };
 
 
 while (ok =="s" || ok =="S" || ok=="si" || ok=="SI" || ok=="Si") {
      pedirDatos();
      comprar();
-     pagar(pago);
+     let presupuesto=parseFloat(prompt("Ingrese su presupuesto:"));
+     if (pago<=presupuesto){
+        alert("Operación permitida - Tiene dinero suficiente");
+        console.log("Operación permitida - Tiene dinero suficiente");
+        pagar(pago);
+        let resto= presupuesto-pago;
+        alert("Monto a pagar: " + pago + " . Le sobran: " + resto);
+        console.log("Monto a pagar: " + pago);
+
+    } else alert("Operación denegada - No tiene dinero suficiente");
+
+     ok=prompt("Continuar?(s/n)");
 }; 
 
 console.log("Gracias por visitar nuestra web");
+alert ("Gracias por visitar nuestra web");
