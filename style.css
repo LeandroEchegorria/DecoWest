@@ -97,9 +97,22 @@ nav ul li :hover{
     padding: auto;
     text-align: left;
 }
-.pie{
+
+footer {
+    margin-top: 35%;
+    padding: 30px;
     height: 15%;
-   
-    margin-bottom: 0;
     background-color: thistle ;
+    text-align: center;
+    font-size: 20px;
+    clear: both;
+    
+}
+.FB {
+    display: inline;
+    padding: 2%;
+}
+.IG {
+    display: inline;
+    padding: 2%;
 }
