@@ -1,32 +1,56 @@
 alert ("Bienvenido a DECOWEST, a continuación te mostraremos nuestro catálogo");
 
-let ok=prompt("Estas de acuerdo?(s/n)");
+let ok=prompt("Estas de acuerdo?(s/n)").toLowerCase();
+
+class Articulo {
+    constructor (nombre, precio, id) {
+        this.nombre = nombre.toUpperCase();
+        this.precio = parseFloat (precio);
+        this.vendido = false;
+        this.id= id;
+    };
+    mostrar() {
+        console.log("ID "+this.id + ". Artículo: "+ this.nombre + ". Precio: "+ this.precio);
+    };
+    vender() {
+        this.vendido = true;
+        console.log("Articulo: "+ this.nombre + ". Vendido:"+this.vendido);
+    }
+};
+
 
 function pedirDatos(){
-    let nombre=prompt("Ingresa tu nombre");
-
-    let edad= parseInt (prompt("¿Cuantos años tenes?"));
-     nacido=2021-edad;
+    class Usuario {
+        constructor (nombre, edad){
+            this.nombre= nombre.toUpperCase();
+            this.edad= parseInt(edad);
+        };
+        imprimir() {
+            console.log("El usuario se llama: "+this.nombre+", y tiene "+this.edad+" años");
+        }
+    };
+    
+    const usuario1= new Usuario (prompt("Ingresa tu nombre"), parseInt (prompt("¿Cuantos años tenes?")));
+        
+    nacido=2021-usuario1.edad;
     let msg="";
-    if (edad >= 21) {
+    if (usuario1.edad >= 21) {
         msg=(" eres mayor de edad");
-    } else if (edad <21){
+    } else if (usuario1.edad <21){
         msg=(" no eres mayor de edad");
     } else 
     msg=("Edad ingresada no es correcta");
     alert("Naciste en el año " + nacido);
-    alert(nombre + msg);
-    console.log("Sus datos ingresados son:");
-    console.log("Nombre:",nombre);
-    console.log("Edad:",edad);
-    console.log("Gracias por participar", nombre);
-
+    alert(msg);
+ 
+    usuario1.imprimir();
+    console.log("Gracias por participar", usuario1.nombre);
 
 };
 
 let pago=0;
 function comprar (){
-    let articulo= parseInt(prompt ("¿Qué articulo desea comprar? 1-Cartuchera ($200); 2-Cuaderno ($350); 3-Set Mate ($700); 4-Sahumerios ($250"));
+    let articulo= parseInt(prompt ("¿Qué articulo desea comprar? 1-Cartuchera ($200); 2-Cuaderno ($350); 3-Set Mate ($700); 4-Sahumerios ($250)"));
     console.log("Articulo = ", articulo);   
     switch (articulo){
         case 1: 
@@ -74,7 +98,7 @@ function pagar(pago){
 };
 
 
-while (ok =="s" || ok =="S" || ok=="si" || ok=="SI" || ok=="Si") {
+while (ok =="s" || ok=="si") {
      pedirDatos();
      comprar();
      let presupuesto=parseFloat(prompt("Ingrese su presupuesto:"));
@@ -88,8 +112,22 @@ while (ok =="s" || ok =="S" || ok=="si" || ok=="SI" || ok=="Si") {
 
     } else alert("Operación denegada - No tiene dinero suficiente");
 
-     ok=prompt("Continuar?(s/n)");
+     ok=prompt("Continuar?(s/n)").toLowerCase();
 }; 
 
 console.log("Gracias por visitar nuestra web");
 alert ("Gracias por visitar nuestra web");
+
+
+
+
+
+/* const articulo1= new Articulo ("Cartuchera", 200, 001);
+const articulo2= new Articulo ("Cuaderno", 350, 002);
+const articulo3= new Articulo ("Set de Mate", 700, 003);
+const articulo4= new Articulo ("Sahumerio", 250 , 004);
+
+
+
+articulo1.mostrar();
+articulo3.vender(); */
