@@ -15,10 +15,10 @@ class Articulo {
 };
 
 //declaracion de objetos de la clase Articulo
-const articulo1= new Articulo ("Cartuchera", 200, 001);
-const articulo2= new Articulo ("Cuaderno", 350, 002);
-const articulo3= new Articulo ("Set de Mate", 700, 003);
-const articulo4= new Articulo ("Sahumerio", 250 , 004);
+const articulo1= new Articulo ("cartuchera", 200, 001);
+const articulo2= new Articulo ("cuaderno", 350, 002);
+const articulo3= new Articulo ("set de mate", 700, 003);
+const articulo4= new Articulo ("sahumerio", 250 , 004);
 
 //declaracion de Array
 const arrayArticulos= [articulo1, articulo2, articulo3, articulo4];
@@ -28,5 +28,12 @@ for (const articulo of arrayArticulos){
     console.log(articulo.nombre);
     console.log(articulo.precio);
 };
-    
 
+const aumentos = arrayArticulos.map(articulo => articulo.precio +=50);
+console.log("Aumento de $50: ",aumentos);
+
+const buscarArticulo = arrayArticulos.find(articulo=> articulo.nombre===prompt("Ingrese articulo a buscar:").toUpperCase());
+console.log("Articulo encontrado:",buscarArticulo);
+
+const filtro = arrayArticulos.filter(articulo=> articulo.precio < 400);
+console.log("Articulos con precios menores de 400:",filtro);
