@@ -1,22 +1,19 @@
 header{
-  height: 75px;
-
-
+    height: 75px;
+  
+  
 }
 #logo_central{
     width: 100px;
     margin: auto;
-    padding: auto;
-    
-    
-    
-
+    padding: auto;     
+  
 }
 #logo_central img{
     width: 150px;
     height: 75px;
     float: left;
-
+  
 }
 .carrito{
     float: right;
@@ -29,7 +26,7 @@ header{
     line-height: 3;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size:large;
- 
+   
 }
 nav{
     margin-top: 10px;
@@ -39,7 +36,7 @@ nav{
 }
 nav ul{
     padding-inline-start: 0px;
-   
+     
 }
 nav ul li {
     display: inline-flex; /*hace que se vea en una linea el NAV*/
@@ -48,27 +45,17 @@ nav ul li {
     font-size: large;  
     font-style: normal;
     display: inline-block;
-    
+      
 }
-
 nav ul li :hover{
     background-color: white;
-       
+     
 }
 nav ul li .activo {
     background-color: rgb(192, 42, 92);
     color: white;
     padding: 10%;
     clear: both;
-}
-
-.presentacion{
-    text-align: center;
-    font-size: 1.2em;
-
-}
-.presentacion p {
-    font-size: 20px;
 }
 .contenedor{
     width: 84%;
@@ -113,15 +100,23 @@ nav ul li .activo {
     text-align: left;
 }
 
+#container{
+    border: solid black;
+    width: 80%;
+    padding: auto;
+    color: red;
+    margin: auto;
+}
+
 footer {
-    margin-top: 5%;
+    margin-top: 10%;
     padding: 30px;
     height: 15%;
     background-color: thistle ;
     text-align: center;
     font-size: 20px;
     clear: both;
-    
+      
 }
 .FB {
     display: inline;

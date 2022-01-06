@@ -32,8 +32,5 @@ for (const articulo of arrayArticulos){
 const aumentos = arrayArticulos.map(articulo => articulo.precio +=50);
 console.log("Aumento de $50: ",aumentos);
 
-const buscarArticulo = arrayArticulos.find(articulo=> articulo.nombre===prompt("Ingrese articulo a buscar:").toUpperCase());
-console.log("Articulo encontrado:",buscarArticulo);
-
 const filtro = arrayArticulos.filter(articulo=> articulo.precio < 400);
 console.log("Articulos con precios menores de 400:",filtro);

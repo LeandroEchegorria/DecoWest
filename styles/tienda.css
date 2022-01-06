@@ -1,0 +1,120 @@
+header{
+    height: 75px;
+  
+  
+}
+#logo_central{
+    width: 100px;
+    margin: auto;
+    padding: auto;     
+  
+}
+#logo_central img{
+    width: 150px;
+    height: 75px;
+    float: left;
+  
+}
+.carrito{
+    float: right;
+    margin-top: auto;
+    margin-right: 5%;
+    color: palevioletred;
+    border: solid gray;
+    border-radius: 50px;    
+    padding: 5px;
+    line-height: 3;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:large;
+   
+}
+nav{
+    margin-top: 10px;
+    background-color: thistle;
+    display: flex;
+    justify-content:center;
+}
+nav ul{
+    padding-inline-start: 0px;
+     
+}
+nav ul li {
+    display: inline-flex; /*hace que se vea en una linea el NAV*/
+    padding: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;  
+    font-style: normal;
+    display: inline-block;
+      
+}
+nav ul li :hover{
+    background-color: white;
+     
+}
+nav ul li .activo {
+    background-color: rgb(192, 42, 92);
+    color: white;
+    padding: 10%;
+    clear: both;
+}
+.contenedor{
+    width: 84%;
+    height: 90%;
+    border: solid palevioletred;
+    margin: auto;
+    display: inline-flex;
+    justify-content:center ;
+    flex-flow: row wrap;
+    float: right;
+
+}
+.articulo{
+    width: 200px;
+    height: 200px;
+    border: solid lightgray;
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content:center ;
+    padding: 5px;
+    margin: 10px;
+}
+.articulo:hover{
+    border: solid black;
+    cursor: pointer;
+}
+.articulo img{
+    width: 150px; 
+    height: 150px;
+}
+.articulo button{
+    width: 80%;
+    height: 15%;
+}
+
+.categorias{
+    width: 14%;
+    height: 90%;
+    border: solid palevioletred;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: auto;
+    text-align: left;
+}
+
+footer {
+    margin-top: 10%;
+    padding: 30px;
+    height: 15%;
+    background-color: thistle ;
+    text-align: center;
+    font-size: 20px;
+    clear: both;
+      
+}
+.FB {
+    display: inline;
+    padding: 2%;
+}
+.IG {
+    display: inline;
+    padding: 2%;
+}
