@@ -35,11 +35,10 @@ function agregar(articulo){
     padre.appendChild (item);
            
     carritoCompra.push(articulo);
-    console.log(carritoCompra);
+    console.log("Contenido del Carrito de Compras:", carritoCompra);
     
     for (const carrito of carritoCompra) {
-/*         console.log(carrito.nombre);
-        console.log(carrito.precio); */
+
         suma = suma + carrito.precio;
         console.log("Precio del item:" + carrito.precio)
         console.log("A pagar:"+suma);
