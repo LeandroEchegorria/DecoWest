@@ -23,10 +23,41 @@ const articulo4= new Articulo ("sahumerio", 250 , 004);
 //declaracion de Array
 const arrayArticulos= [articulo1, articulo2, articulo3, articulo4];
 
-console.log("A continuación se muestran los artículos:");
-for (const articulo of arrayArticulos){  
-    console.log(articulo.nombre);
-    console.log(articulo.precio);
+const carritoCompra=[];
+let suma = 0; 
+function agregar(articulo){
+    const enJSON = JSON.stringify(articulo); 
+    localStorage.setItem(articulo.nombre,enJSON);  
+    let padre = document.getElementById("carroCompras"); 
+    let item = document.createElement("ul");
+    item.innerHTML = `<li>${articulo.nombre}</li>
+                        <p>$ ${articulo.precio}</p>`;
+    padre.appendChild (item);
+           
+    carritoCompra.push(articulo);
+    console.log(carritoCompra);
+    
+    for (const carrito of carritoCompra) {
+/*         console.log(carrito.nombre);
+        console.log(carrito.precio); */
+        suma = suma + carrito.precio;
+        console.log("Precio del item:" + carrito.precio)
+        console.log("A pagar:"+suma);
+        console.log("");
+    };
+    return suma;
+};
+
+
+console.log("suma",suma);
+function pagar () {
+    let padre = document.getElementById("pago");
+    let pago= document.createElement("p");
+    pago.innerHTML = `<h4>Total:${suma}</h4>`;
+    padre.appendChild(pago);
+    
+    let btnPadre= document.getElementById("boton"); //borra el boton de pago
+    btnPadre.parentNode.removeChild(btnPadre);
 };
 
 const aumentos = arrayArticulos.map(articulo => articulo.precio +=50);

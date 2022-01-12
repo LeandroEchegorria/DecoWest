@@ -42,38 +42,38 @@
         <div class="contenedor">
             <div class="articulo">
                 <img src="/img/cartuchera1.jpg" alt="">
-                <button>Comprar</button>
+                <button onclick="agregar(articulo1)">Comprar</button>
             </div>
             <div class="articulo">
                 <img src="/img/cuaderno1.jpg" alt="">
-                <button>Comprar</button>
+                <button onclick="agregar(articulo2)">Comprar</button>
             </div>
             <div class="articulo">
                 <img src="/img/setmate1.jpg" alt="">
-                <button>Comprar</button>
+                <button onclick="agregar(articulo3)">Comprar</button>
             </div>
             <div class="articulo">
-                <img src="/img/setmate2.jpg" alt="">
-                <button>Comprar</button>
+                <img src="/img/sahumeriosSatya1.png" alt="">
+                <button onclick="agregar(articulo4)">Comprar</button>
             </div>
             <div class="articulo">
                 <img src="/img/cuaderno2.jpg" alt="">
                 <button>Comprar</button>
             </div>
             <div class="articulo">
-                <img src="/img/setmate2.jpg" alt="">
+                <img src="/img/cuello1.png" alt="">
                 <button>Comprar</button>
             </div>
             <div class="articulo">
-                <img src="/img/setmate2.jpg" alt="">
+                <img src="/img/lata1.png" alt="">
                 <button>Comprar</button>
             </div>
             <div class="articulo">
-                <img src="/img/setmate2.jpg" alt="">
+                <img src="/img/mateava1.png" alt="">
                 <button>Comprar</button>
             </div>
             <div class="articulo">
-                <img src="/img/setmate2.jpg" alt="">
+                <img src="/img/sahumeriosSagrada1.png" alt="">
                 <button>Comprar</button>
             </div>
             <div class="articulo">
@@ -83,21 +83,16 @@
         </div>
     
         <aside>
-            <div class="categorias">
-                <h3>Categorías</h3>
-                <ul>
-                    <li>Hogar</li>
-                    <li>Sahumerios Satya</li>
-                    <li>Todo para el mate</li>
-                    <li>Botellas</li>
-                    <li>Cuadernos y anotadores</li>
-                    <li>Kids</li>
-                    <li>Accesorios</li>
-                    <li>Sahumerios Sagrada Madre</li>
-                    <li>Cartucheras</li>
-                    <li>Ofertas</li>
-                </ul>
+            <div id="carroCompras">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <h3>Carrito de Compras</h3>                
             </div>
+            <div id="boton">
+                <button onclick=pagar()>Pagar</button>
+                
+            </div>
+            <p id="pago"></p>
+            
         </aside>        
     </main>
 
@@ -116,7 +111,7 @@
         
     </footer>
 
-
+    <script src="../js/clases.js"></script>
 </body>
 
 </html>

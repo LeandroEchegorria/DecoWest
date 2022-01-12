@@ -81,25 +81,34 @@ nav ul li .activo {
 .articulo:hover{
     border: solid black;
     cursor: pointer;
+    background-color: white;
+    transform: scale(1.05,1.05);
+    transition: all 0.3s ease-in-out;
 }
 .articulo img{
     width: 150px; 
     height: 150px;
 }
+
 .articulo button{
     width: 80%;
     height: 15%;
 }
-
-.categorias{
+#carroCompras{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     width: 14%;
-    height: 90%;
     border: solid palevioletred;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding: auto;
-    text-align: left;
+    text-align: center;
 }
-
+#carroCompras i{
+    font-size: larger;
+    padding: 15px;
+}
+aside button{
+    margin-left: 5%;
+    margin-top: 1%;
+    justify-items: center;
+}
 footer {
     margin-top: 10%;
     padding: 30px;
@@ -114,6 +123,7 @@ footer {
     display: inline;
     padding: 2%;
 }
+
 .IG {
     display: inline;
     padding: 2%;
