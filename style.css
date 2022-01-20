@@ -7,9 +7,7 @@ header{
     width: 100px;
     margin: auto;
     padding: auto;
-    
-    
-    
+       
 
 }
 #logo_central img{
@@ -36,6 +34,7 @@ nav{
     background-color: thistle;
     display: flex;
     justify-content:center;
+    box-shadow: 10px 5px 25px gray;
 }
 nav ul{
     padding-inline-start: 0px;
@@ -55,7 +54,7 @@ nav ul li :hover{
     background-color: white;
        
 }
-nav ul li .activo {
+.activo {
     background-color: rgb(192, 42, 92);
     color: white;
     padding: 10%;

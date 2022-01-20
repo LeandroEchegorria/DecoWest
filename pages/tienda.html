@@ -17,101 +17,33 @@
 </head>
 
 <header>
-    <div id="logo_central">
-        <img src="/img/logo.jpg" alt="">
-    </div>
-    <div class="carrito">
-        <a href="">Comprar
-            <i class="fa-solid fa-cart-shopping"></i>
-        </a>
-
-    </div>
 </header>
 
 <body>
     <nav>
-        <ul>
-            <li><a href="../index.html">HOME</a></li>
-            <li><a class="activo" href="tienda.html">TIENDA</a></li>
-            <li><a href="contacto.html">CONTACTO</a></li>
-            <li><a href="novedades.html">NOVEDADES</a></li>
-        </ul>
-
     </nav>
-    <main>
-        <div class="contenedor">
-            <div class="articulo">
-                <img src="/img/cartuchera1.jpg" alt="">
-                <button onclick="agregar(articulo1)">Comprar</button>
-            </div>
-            <div class="articulo">
-                <img src="/img/cuaderno1.jpg" alt="">
-                <button onclick="agregar(articulo2)">Comprar</button>
-            </div>
-            <div class="articulo">
-                <img src="/img/setmate1.jpg" alt="">
-                <button onclick="agregar(articulo3)">Comprar</button>
-            </div>
-            <div class="articulo">
-                <img src="/img/sahumeriosSatya1.png" alt="">
-                <button onclick="agregar(articulo4)">Comprar</button>
-            </div>
-            <div class="articulo">
-                <img src="/img/cuaderno2.jpg" alt="">
-                <button>Comprar</button>
-            </div>
-            <div class="articulo">
-                <img src="/img/cuello1.png" alt="">
-                <button>Comprar</button>
-            </div>
-            <div class="articulo">
-                <img src="/img/lata1.png" alt="">
-                <button>Comprar</button>
-            </div>
-            <div class="articulo">
-                <img src="/img/mateava1.png" alt="">
-                <button>Comprar</button>
-            </div>
-            <div class="articulo">
-                <img src="/img/sahumeriosSagrada1.png" alt="">
-                <button>Comprar</button>
-            </div>
-            <div class="articulo">
-                <img src="/img/setmate2.jpg" alt="">
-                <button>Comprar</button>
-            </div>
-        </div>
-    
-        <aside>
-            <div id="carroCompras">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <h3>Carrito de Compras</h3>                
-            </div>
+
+    <main class="shop"> 
+         <aside>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <h3>Carrito de Compras</h3>      
+            <div id="carroCompras"></div>
+         
             <div id="boton">
                 <button onclick=pagar()>Pagar</button>
-                
             </div>
-            <p id="pago"></p>
-            
-        </aside>        
+            <p id="pago"></p>   
+         </aside>
     </main>
 
     <footer class="pie">
-        <div class="FB">
-            <a href="https://www.facebook.com/Deco-West-105390824933699" target="_blank"><i class="fab fa-facebook" 
-                style="color: white; font-size: 40px"></i></a>
-        </div>
-        <div class="IG">
-            <a href="https://www.instagram.com/decowest.ok/?hl=es" target="_blank"><i class="fab fa-instagram"
-                style="color: white; font-size: 40px; "></i></a>
-            
-        </div>                
-        <p>Av.Piovanno 5500, Moreno, Buenos Aires, Argentina</p>
-        <p>Web Design by Leandro Echegorría</p>
-        
     </footer>
 
+    
+    <script src="../js/visual.js"></script>
+    <script src="../js/visualShop.js"></script>
     <script src="../js/clases.js"></script>
+
 </body>
 
 </html>

@@ -33,6 +33,7 @@ nav{
     background-color: thistle;
     display: flex;
     justify-content:center;
+    box-shadow: 10px 5px 25px gray;
 }
 nav ul{
     padding-inline-start: 0px;
@@ -94,13 +95,14 @@ nav ul li .activo {
     width: 80%;
     height: 15%;
 }
-#carroCompras{
+aside{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     width: 14%;
     border: solid palevioletred;
     text-align: center;
+    float: left;
 }
-#carroCompras i{
+aside i{
     font-size: larger;
     padding: 15px;
 }
