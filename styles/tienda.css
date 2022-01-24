@@ -58,26 +58,26 @@ nav ul li .activo {
     padding: 10%;
     clear: both;
 }
-.contenedor{
-    width: 84%;
+.muestraArticulos{
+    width: 70%;
     height: 90%;
     border: solid palevioletred;
     margin: auto;
     display: inline-flex;
     justify-content:center ;
     flex-flow: row wrap;
-    float: right;
+    float: left;
 
 }
 .articulo{
-    width: 200px;
-    height: 200px;
+    width: 20%;
+    height: fit-content;
     border: solid lightgray;
     display: inline-flex;
     flex-flow: row wrap;
     justify-content:center ;
     padding: 5px;
-    margin: 10px;
+    margin: 5px;
 }
 .articulo:hover{
     border: solid black;
@@ -90,17 +90,29 @@ nav ul li .activo {
     width: 150px; 
     height: 150px;
 }
+.articulo h5 {
+    padding: 5px;
+    margin: auto;
+    text-align: center;
+}
+.articulo p{
+    text-align: center;
+    font-size: 12px;
+    margin: auto;
+    
+}
 
 .articulo button{
     width: 80%;
-    height: 15%;
+    margin: 15px 0 0 0;
+    padding: auto;
 }
 aside{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    width: 14%;
+    width: 25%;
     border: solid palevioletred;
     text-align: center;
-    float: left;
+    float: right;
 }
 aside i{
     font-size: larger;
@@ -110,6 +122,9 @@ aside button{
     margin-left: 5%;
     margin-top: 1%;
     justify-items: center;
+}
+#pago{
+    float: right;
 }
 footer {
     margin-top: 10%;

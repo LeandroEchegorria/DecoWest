@@ -25,25 +25,37 @@
     </nav>
 
     <main class="shop"> 
-         <aside>
+        <div class="muestraArticulos">
+        </div>
+        <aside>
             <i class="fa-solid fa-cart-shopping"></i>
             <h3>Carrito de Compras</h3>      
-            <div id="carroCompras"></div>
+            <div id="carroCompras">
+                <table id="tablaCarrito" class="tablaCarrito">
+                    <tr>
+                        <th>Item</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </table>
+            </div>
          
             <div id="boton">
-                <button onclick=pagar()>Pagar</button>
+                <button id="botonPago">Pagar</button> 
             </div>
             <p id="pago"></p>   
-         </aside>
+        </aside>
     </main>
 
     <footer class="pie">
     </footer>
 
     
-    <script src="../js/visual.js"></script>
-    <script src="../js/visualShop.js"></script>
+    <script src="../js/visual.js"></script> 
     <script src="../js/clases.js"></script>
+    <script src="../js/visualShop.js"></script>
+
 
 </body>
 
