@@ -68,6 +68,9 @@ form{
     border-radius: 5px;
     float: left;
 }
+h6{
+    color: red;
+}
 iframe {
     border: solid black;
 }

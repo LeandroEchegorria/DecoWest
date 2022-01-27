@@ -114,15 +114,20 @@ function agregarAlCarrito (event) {
 
 }; 
 
-function actualizarCarrito() {    
-    
+function actualizarCarrito() {     
     carritoCompra.forEach(articulo=> {
         let tabla = document.getElementById("tablaCarrito"); 
         let item = document.createElement("tr");
+        item.id="items";
         item.innerHTML = `<td>${articulo.nombre}</td>
                     <td>${articulo.cantidad}</td>
                     <td>$ ${articulo.precio}</td>
-                    <td>$${articulo.cantidad*articulo.precio}</td>`;
+                    <td>$${articulo.cantidad*articulo.precio}</td>
+                    <td>${articulo.id}</td>`;
         tabla.appendChild (item);
     });
+    verAsideShop();
+    let reset= document.getElementById("items");
+    reset.parentNode.removeChild(reset);
+
 };
