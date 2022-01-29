@@ -6,13 +6,7 @@ class Articulo {
         this.id= id;
         this.image= image;
     };
-    mostrar() {
-        console.log("ID "+this.id + ". Artículo: "+ this.nombre + ". Precio: "+ this.precio);
-    };
-    vender() {
-        this.vendido = true;
-        console.log("Articulo: "+ this.nombre + ". Vendido:"+this.vendido);
-    }
+
 };
 
 class Carrito {
@@ -41,10 +35,10 @@ if (obtenerStorage('carrito')){
 
 //declaracion de objetos de la clase Articulo
 const articulo1= new Articulo ("cartuchera", 200, 1, "../img/cartuchera1.jpg");
-const articulo2= new Articulo ("cuaderno", 350, 2, "../img/cuaderno1.jpg");
+const articulo2= new Articulo ("cuaderno 1", 350, 2, "../img/cuaderno1.jpg");
 const articulo3= new Articulo ("set de mate", 700, 3, "../img/setmate1.jpg");
 const articulo4= new Articulo ("sahumerio", 250 , 4, "../img/sahumeriosSagrada1.png");
-const articulo5= new Articulo ("cuaderno", 400 ,5, "../img/cuaderno2.jpg");
+const articulo5= new Articulo ("cuaderno 2", 400 ,5, "../img/cuaderno2.jpg");
 const articulo6= new Articulo ("cuello auric.", 550 , 6, "../img/cuello1.png");
 const articulo7= new Articulo ("lata", 750 , 7, "../img/lata1.png");
 const articulo8= new Articulo ("mate no se lava", 650, 8,"../img/mateava1.png");
@@ -60,16 +54,16 @@ let botonPago= document.getElementById("botonPago");
 function pagar () {
     let padre = document.getElementsByTagName("aside");
     let pago= document.createElement("p");
+    carritoCompra.forEach(articulo => precioTotal += articulo.precio * articulo.cantidad);
+    console.log(`Precio total: ${precioTotal}`);
     pago.innerHTML = `<h4>Total:${precioTotal}</h4>`;
     console.log(precioTotal);
     padre[0].appendChild(pago);
     carritoCompra=[];
     localStorage.clear();
-    verAsideShop();
-    let reset= document.getElementById("carroCompras");
-    reset.parentNode.removeChild(reset);
-    let total=document.createElement("p");
-    total.innerHTML = `<h4>Total:${precioTotal}</h4>`;
+
+
+
 };
 
 let idArticuloElegido;
@@ -89,45 +83,45 @@ function agregarAlCarrito (event) {
                 const articuloElegido = carritoCompra.find(articulo => articulo.id === parseInt(idArticuloElegido));
                 articuloElegido.cantidad++;  
                 guardarStorage('carrito', carritoCompra);
-
-                //ACA QUIERO BORRAR EL ITEM AGREGADO Y CARGAR SOLO EL ULTIMO                
-
-                actualizarCarrito();
-
+                
             } else { //el articulo no esta en el carrito 
                 console.log("no esta en carrito");
                 const articuloElegido= arrayArticulos.find(articulo => articulo.id === parseInt(idArticuloElegido));
                 const articulo = new Carrito (articuloElegido.nombre, articuloElegido.precio, articuloElegido.id, 1);
                 carritoCompra.push(articulo);
                 guardarStorage('carrito', carritoCompra);
-                
-                actualizarCarrito();
-            
             } ;    
         } else {
             console.log("Nro no valido");
         };
         
-    console.log(carritoCompra);
-    carritoCompra.forEach(articulo => precioTotal += articulo.precio * articulo.cantidad);
-    console.log(`Precio total: ${precioTotal}`);
-
+    actualizarCarrito();
 }; 
 
-function actualizarCarrito() {     
+function actualizarCarrito() {  
+    //Reinicia el espacio visual del carrito
+    let borra = document.getElementById("items");
+    borra.innerHTML=`
+                        <tr>
+                            <th>Item</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    `; 
+    
+    //recorro el carrito para imprimir los items en él
     carritoCompra.forEach(articulo=> {
-        let tabla = document.getElementById("tablaCarrito"); 
+        let tabla = document.getElementById("items"); 
         let item = document.createElement("tr");
-        item.id="items";
-        item.innerHTML = `<td>${articulo.nombre}</td>
+        item.id=`${articulo.id}`;
+        item.className="articuloCarrito";
+        item.innerHTML = `<td>${articulo.nombre}</td>\n
                     <td>${articulo.cantidad}</td>
                     <td>$ ${articulo.precio}</td>
                     <td>$${articulo.cantidad*articulo.precio}</td>
-                    <td>${articulo.id}</td>`;
+                    `;
         tabla.appendChild (item);
+    
     });
-    verAsideShop();
-    let reset= document.getElementById("items");
-    reset.parentNode.removeChild(reset);
-
 };

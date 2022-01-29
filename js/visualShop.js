@@ -29,7 +29,7 @@ function verAsideShop(){
     let aside = document.getElementsByTagName("aside"); 
     let item = document.createElement("div");
     item.id="carroCompras";
-    item.innerHTML = `<div id="carroCompras"></div>`;
+   
     aside[0].appendChild (item);
 };
-verAsideShop();
+verAsideShop(); 

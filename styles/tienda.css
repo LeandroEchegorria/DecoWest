@@ -123,6 +123,12 @@ aside button{
     margin-top: 1%;
     justify-items: center;
 }
+table, th, td{
+    margin: auto;
+    border: 1px solid red;
+    border-collapse: collapse;
+}
+
 #pago{
     float: right;
 }
