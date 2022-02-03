@@ -1,7 +1,8 @@
 //archivo js que genera la tienda
-function verMainShop(){
+function verMainShop(array){
     let contenedorArticulos = document.getElementsByClassName("muestraArticulos"); 
-    arrayArticulos.forEach(articulo=>{
+    console.log(arrayArticulos);
+    array.forEach(articulo => {
         let item = document.createElement("div");
         item.setAttribute("class", "articulo");
         item.setAttribute("id", articulo.id);
@@ -21,9 +22,9 @@ function verMainShop(){
             item.appendChild (boton);
         };
 
-    })
+    });
 };
-verMainShop();
+
 
 function verAsideShop(){
     let aside = document.getElementsByTagName("aside"); 

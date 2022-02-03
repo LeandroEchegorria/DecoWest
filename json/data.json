@@ -1,0 +1,14 @@
+ 
+ [
+     {"nombre":"Cartuchera", "precio": 200, "id": 1, "image": "../img/cartuchera1.jpg"},
+     {"nombre":"cuaderno 1", "precio": 350, "id": 2, "image": "../img/cuaderno1.jpg"},
+     {"nombre":"set de mate", "precio": 700, "id": 3, "image": "../img/setmate1.jpg"},
+     {"nombre":"sahumerio", "precio": 250, "id": 4, "image": "../img/sahumeriosSagrada1.png"},
+     {"nombre":"cuaderno 2", "precio": 400, "id": 5, "image": "../img/cuaderno2.jpg"},
+     {"nombre":"cuello auric.", "precio": 550, "id": 6, "image": "../img/cuello1.png"},
+     {"nombre":"lata", "precio": 750, "id": 7, "image": "../img/lata1.png"},
+     {"nombre":"mate no se lava", "precio": 650, "id": 8, "image": "../img/mateava1.png"},
+     {"nombre":"sahumerio palo santo", "precio": 250, "id": 9, "image": "../img/sahumeriosSatya1.png"},
+     {"nombre":"set matero", "precio": 750, "id": 10, "image": "../img/setmate2.jpg"}
+    
+ ]
