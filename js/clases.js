@@ -53,24 +53,28 @@ let botonPago= document.getElementById("botonPago");
     botonPago.addEventListener("click", pagar);
 
 function pagar () {
-    let padre = document.getElementsByTagName("aside");
+ /*    let padre = document.getElementsByTagName("aside");
     let pago= document.createElement("p");
     carritoCompra.forEach(articulo => precioTotal += articulo.precio * articulo.cantidad);
-    console.log(`Precio total: ${precioTotal}`);
     pago.innerHTML = `<h4>Total:${precioTotal}</h4>`;
-    console.log(precioTotal);
     padre[0].appendChild(pago);
     carritoCompra=[];
     localStorage.clear();
+    actualizarCarrito(); */
 
-
-
+    let padre = document.getElementById("pago");
+    padre.innerHTML =``;
+    carritoCompra.forEach(articulo => precioTotal += articulo.precio * articulo.cantidad);
+    padre.innerHTML = `<h4>Total:${precioTotal}</h4>`;
+    carritoCompra=[];
+    localStorage.clear();
+    precioTotal=0;
+    actualizarCarrito();
 };
 
 let idArticuloElegido;
 let articuloElegido;
 let precioTotal= 0;
-
 
 function agregarAlCarrito (event) {
     $.ajax({
@@ -83,29 +87,26 @@ function agregarAlCarrito (event) {
                 if (response.some(articulo => articulo.id === parseInt(idArticuloElegido))){
                 
                     if (carritoCompra.some(articulo => articulo.id === parseInt(idArticuloElegido))){ //articulo esta en el carrito
-                        console.log("esta en el carrito");
                         const articuloElegido = carritoCompra.find(articulo => articulo.id === parseInt(idArticuloElegido));
                         articuloElegido.cantidad++;  
+                        agregado();
                         guardarStorage('carrito', carritoCompra);
                         
                     } else { //el articulo no esta en el carrito 
-                        console.log("no esta en carrito");
                         const articuloElegido= response.find(articulo => articulo.id === parseInt(idArticuloElegido));
                         const articulo = new Carrito (articuloElegido.nombre, articuloElegido.precio, articuloElegido.id, 1);
                         carritoCompra.push(articulo);
+                        agregado();
                         guardarStorage('carrito', carritoCompra);
                     } ;    
-                } else {
-                    console.log("Nro no valido");
+                } else { 
+                       console.log("Nro no valido");
+                        
+                    }
                 };
-                
-            actualizarCarrito();
-                    
-            };
+            actualizarCarrito();   
         }
-    });
-   
-        
+    });  
 }; 
 
 function actualizarCarrito() {  
@@ -130,9 +131,53 @@ function actualizarCarrito() {
                     <td>${articulo.cantidad}</td>
                     <td>$ ${articulo.precio}</td>
                     <td>$${articulo.cantidad*articulo.precio}</td>
+                    <td><i id="${articulo.nombre}" class="fa-solid fa-circle-xmark"></i></td>
                     `;
         tabla.appendChild (item);
-      
+    });
+    //crea el event listener de cada articulo del carrito
+    carritoCompra.forEach(articulo=> {
+        $(`#${articulo.nombre}`).click(quitarCarrito);
     });
 };
+function agregado(){
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Producto agregado',
+        showConfirmButton: false,
+        timer: 1000
+      })
+};
+function quitado(){
+    Swal.fire({
+        position: 'top-end',
+        icon: 'error',
+        title: 'Producto removido',
+        showConfirmButton: false,
+        timer: 1200
+      })
+};
 
+
+
+function quitarCarrito (event) {
+    nombreArticuloElegido= event.target.id;
+
+    //verifica que el id elegido este en el array de articulos
+    if (carritoCompra.some(articulo => articulo.nombre === nombreArticuloElegido)){ 
+        const articuloElegido = carritoCompra.find(articulo => articulo.nombre === nombreArticuloElegido);
+        articuloElegido.cantidad--; 
+        if (articuloElegido.cantidad < 1) {
+            let index= carritoCompra.findIndex((articulo)=> articulo.nombre === nombreArticuloElegido);
+            carritoCompra.splice(index,1);
+        };
+        quitado();
+        guardarStorage('carrito', carritoCompra);
+    };           
+    actualizarCarrito();
+};
+
+                
+        
+            

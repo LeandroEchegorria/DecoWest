@@ -109,7 +109,7 @@ nav ul li .activo {
 }
 aside{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    width: 25%;
+    width: 27%;
     border: solid palevioletred;
     text-align: center;
     float: right;
@@ -125,12 +125,16 @@ aside button{
 }
 table, th, td{
     margin: auto;
-    border: 1px solid red;
+    border: 1px dashed red;
     border-collapse: collapse;
-}
 
+}
+table{
+    padding: 50px;
+}
 #pago{
-    float: right;
+    margin: auto;
+    padding: auto;
 }
 footer {
     margin-top: 10%;

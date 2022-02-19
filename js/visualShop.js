@@ -1,7 +1,6 @@
 //archivo js que genera la tienda
 function verMainShop(array){
     let contenedorArticulos = document.getElementsByClassName("muestraArticulos"); 
-    console.log(arrayArticulos);
     array.forEach(articulo => {
         let item = document.createElement("div");
         item.setAttribute("class", "articulo");
