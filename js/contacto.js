@@ -3,16 +3,16 @@ function verContacto() {
 
     $("#formulario").prepend (`<h3>Formulario de contacto</h3>
         <p><label class="name">Nombre Completo:</label></p>
-        <input type="text" name="nombre" id="name"/>
+        <input type="text" name="nombre" id="name" placeholder="Nombre Apellido"/>
             
         <p><label class="email">Email:</label></p>
-        <input type="text" name="email" id="email"/>
+        <input type="text" name="email" id="email" placeholder="juan@gmail.com"/>
 
         <p><label  class="phone">Telefono:</label></p>            
-        <input type="text" name="telefono" id="phone"/>
+        <input type="text" name="telefono" id="phone" placeholder="11-2222-3333"/>
             
         <p><label class="comment">Comentario:</label></p>
-        <p><textarea name="mensaje" id="comment"></textarea></p>
+        <p><textarea name="mensaje" id="comment" placeholder="Ingrese su comentario"></textarea></p>
         <input type="submit" value="Enviar"/>`
     );
 };
@@ -29,7 +29,7 @@ function verificaForm () {
     let email= $("#email")[0].value;
     let phone= $("#phone")[0].value;
 
-    if (name.length == 0) {
+    if (name.length < 3) {
         $("#formulario").append(`<h6 class="error">Campo "Nombre" obligatorio</h6>`);
     } else if (email.length == 0) {
             $("#formulario").append(`<h6 class="error">Campo "Email" obligatorio</h6>`);

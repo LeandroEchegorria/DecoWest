@@ -53,15 +53,6 @@ let botonPago= document.getElementById("botonPago");
     botonPago.addEventListener("click", pagar);
 
 function pagar () {
- /*    let padre = document.getElementsByTagName("aside");
-    let pago= document.createElement("p");
-    carritoCompra.forEach(articulo => precioTotal += articulo.precio * articulo.cantidad);
-    pago.innerHTML = `<h4>Total:${precioTotal}</h4>`;
-    padre[0].appendChild(pago);
-    carritoCompra=[];
-    localStorage.clear();
-    actualizarCarrito(); */
-
     let padre = document.getElementById("pago");
     padre.innerHTML =``;
     carritoCompra.forEach(articulo => precioTotal += articulo.precio * articulo.cantidad);
@@ -158,8 +149,6 @@ function quitado(){
         timer: 1200
       })
 };
-
-
 
 function quitarCarrito (event) {
     nombreArticuloElegido= event.target.id;
